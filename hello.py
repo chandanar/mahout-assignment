@@ -15,7 +15,7 @@ for i in p:
   # and value of recommendations
   # E.g., 35^I[2067:5.0,17:5.0,1041:5.0,2068:5.0,2087:5.0,
   #       1036:5.0,900:5.0,1:5.0,081:5.0,3135:5.0]$
-  k,v = i.split('t')
+  k,v = i.split('\t')
 
   # Put key, value into Redis
   r.set(k,v)
@@ -35,5 +35,5 @@ def recs(request, id):
 def home(request):
   return 'Please add a user id to the URL, e.g. http://localhost:8080/1234n'
 
-# Start up a listener on port 8080
-run("localhost", 8080)
+# Start up a listener on port 8090
+run("localhost", 8090)
